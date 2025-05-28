@@ -31,6 +31,25 @@ class PalCalc {
     return palValue;
   }
 
+  static double getPALValueFromActivityCategoryPoints(UserEntity userEntity) {
+    double palValue;
+    switch (userEntity.pal) {
+      case UserPALEntity.sedentary:
+        palValue = 0;
+        break;
+      case UserPALEntity.lowActive:
+        palValue = 2;
+        break;
+      case UserPALEntity.active:
+        palValue = 4;
+        break;
+      case UserPALEntity.veryActive:
+        palValue = 6;
+        break;
+    }
+    return palValue;
+  }
+
   ///
   /// Returns the physical activity coefficient (PA) from the PAL value
   /// and user gender based on IOM recommendation

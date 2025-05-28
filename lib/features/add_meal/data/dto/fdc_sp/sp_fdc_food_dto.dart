@@ -30,6 +30,7 @@ class SpFdcFoodDTO {
       case SupportedLanguage.de:
         return descriptionDe;
     }
+    return null;
   }
 
   double? get servingSize => portions

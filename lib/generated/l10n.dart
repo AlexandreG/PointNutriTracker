@@ -1184,7 +1184,7 @@ class S {
   /// `kcal`
   String get kcalLabel {
     return Intl.message(
-      'kcal',
+      'points',
       name: 'kcalLabel',
       desc: '',
       args: [],

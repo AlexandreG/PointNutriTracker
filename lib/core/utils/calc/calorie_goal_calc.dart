@@ -3,9 +3,9 @@ import 'package:opennutritracker/core/domain/entity/user_weight_goal_entity.dart
 import 'package:opennutritracker/core/utils/calc/tdee_calc.dart';
 
 class CalorieGoalCalc {
-  static const double loseWeightKcalAdjustment = -500;
+  static const double loseWeightKcalAdjustment = -4;
   static const double maintainWeightKcalAdjustment = 0;
-  static const double gainWeightKcalAdjustment = 500;
+  static const double gainWeightKcalAdjustment = 4;
 
   static double getDailyKcalLeft(
           double totalKcalGoal, double totalKcalIntake) =>
@@ -20,7 +20,7 @@ class CalorieGoalCalc {
       getTdee(userEntity) +
       getKcalGoalAdjustment(userEntity.goal) +
       (kcalUserAdjustment ?? 0) +
-      totalKcalActivities;
+      totalKcalActivities/85;
 
   static double getKcalGoalAdjustment(UserWeightGoalEntity goal) {
     double kcalAdjustment;

@@ -59,9 +59,11 @@ class MealNutrimentsEntity extends Equatable {
     // 1. OFF product nutriments can either be String, int, double or null
     // 2. Extension function asDoubleOrNull does not work on a dynamic data
     // type, so cast to it Object?
+    int kcal = (((offNutriments.energy_kcal_100g as Object?).asDoubleOrNull() ?? 0)/60).toInt();
+    int fat = (((offNutriments.fat_100g as Object?).asDoubleOrNull() ?? 0)/9).toInt();
     return MealNutrimentsEntity(
         energyKcal100:
-            (offNutriments.energy_kcal_100g as Object?).asDoubleOrNull(),
+        (kcal + fat).toDouble(),
         carbohydrates100:
             (offNutriments.carbohydrates_100g as Object?).asDoubleOrNull(),
         fat100: (offNutriments.fat_100g as Object?).asDoubleOrNull(),

@@ -26,23 +26,39 @@ class TDEECalc {
   /// https://nap.nationalacademies.org/catalog/10490/dietary-reference-intakes-for-energy-carbohydrate-fiber-fat-fatty-acids-cholesterol-protein-and-amino-acids
   static double getTDEEKcalIOM2005(UserEntity userEntity) {
     double tdeeKcal;
+
     if (userEntity.gender == UserGenderEntity.male) {
-      tdeeKcal = 864 -
-          9.72 * userEntity.age +
-          PalCalc.getPAValueFromPALValue(userEntity,
-                  PalCalc.getPALValueFromActivityCategory(userEntity)) *
-              14.2 *
-              userEntity.weightKG +
-          503 * (userEntity.heightCM / 100);
+      tdeeKcal = 15;
     } else {
-      tdeeKcal = 387 -
-          7.31 * userEntity.age +
-          PalCalc.getPAValueFromPALValue(userEntity,
-                  PalCalc.getPALValueFromActivityCategory(userEntity)) *
-              10.9 *
-              userEntity.weightKG +
-          660.7 * (userEntity.heightCM / 100);
+      tdeeKcal = 7;
     }
+
+    if (userEntity.age >= 18 && userEntity.age <= 20) {
+      tdeeKcal += 5;
+    }
+    if (userEntity.age >= 21 && userEntity.age <= 35) {
+      tdeeKcal += 4;
+    }
+    if (userEntity.age >= 36 && userEntity.age <= 50) {
+      tdeeKcal += 3;
+    }
+    if (userEntity.age >= 51 && userEntity.age <= 65) {
+      tdeeKcal += 2;
+    }
+    if (userEntity.age >= 66) {
+      tdeeKcal += 1;
+    }
+
+    tdeeKcal += userEntity.weightKG / 10;
+
+    if (userEntity.heightCM > 160) {
+      tdeeKcal += 2;
+    } else {
+      tdeeKcal += 1;
+    }
+
+    tdeeKcal += PalCalc.getPALValueFromActivityCategoryPoints(userEntity);
+
     return tdeeKcal;
   }
 }

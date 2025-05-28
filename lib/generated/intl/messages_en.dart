@@ -96,7 +96,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "createCustomDialogTitle":
             MessageLookupByLibrary.simpleMessage("Create custom meal item?"),
         "dailyKcalAdjustmentLabel":
-            MessageLookupByLibrary.simpleMessage("Daily Kcal adjustment:"),
+            MessageLookupByLibrary.simpleMessage("Daily Points adjustment:"),
         "dataCollectionLabel": MessageLookupByLibrary.simpleMessage(
             "Support development by providing anonymous usage data"),
         "deleteAllLabel": MessageLookupByLibrary.simpleMessage("Delete all"),
@@ -169,8 +169,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Item deleted"),
         "itemUpdatedSnackbar":
             MessageLookupByLibrary.simpleMessage("Item updated"),
-        "kcalLabel": MessageLookupByLibrary.simpleMessage("kcal"),
-        "kcalLeftLabel": MessageLookupByLibrary.simpleMessage("kcal left"),
+        "kcalLabel": MessageLookupByLibrary.simpleMessage("points"),
+        "kcalLeftLabel": MessageLookupByLibrary.simpleMessage("points left"),
         "kgLabel": MessageLookupByLibrary.simpleMessage("kg"),
         "lbsLabel": MessageLookupByLibrary.simpleMessage("lbs"),
         "lunchExample":
@@ -181,7 +181,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "mealBrandsLabel": MessageLookupByLibrary.simpleMessage("Brands"),
         "mealCarbsLabel": MessageLookupByLibrary.simpleMessage("carbs per"),
         "mealFatLabel": MessageLookupByLibrary.simpleMessage("fat per"),
-        "mealKcalLabel": MessageLookupByLibrary.simpleMessage("kcal per"),
+        "mealKcalLabel": MessageLookupByLibrary.simpleMessage("points per"),
         "mealNameLabel": MessageLookupByLibrary.simpleMessage("Meal name"),
         "mealProteinLabel":
             MessageLookupByLibrary.simpleMessage("protein per 100 g/ml"),
@@ -253,7 +253,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "onboardingIntroDescription": MessageLookupByLibrary.simpleMessage(
             "To start, the app needs some information about you to calculate your daily calorie goal.\nAll information about you is stored securely on your device."),
         "onboardingKcalPerDayLabel":
-            MessageLookupByLibrary.simpleMessage("kcal per day"),
+            MessageLookupByLibrary.simpleMessage("points per day"),
         "onboardingOverviewLabel":
             MessageLookupByLibrary.simpleMessage("Overview"),
         "onboardingSaveUserError": MessageLookupByLibrary.simpleMessage(
